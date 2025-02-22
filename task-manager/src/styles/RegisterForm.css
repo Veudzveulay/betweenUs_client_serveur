@@ -1,0 +1,94 @@
+/* Style global du formulaire d'inscription */
+.register-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Titre du formulaire d'inscription */
+.register-form h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style des champs de saisie */
+.register-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Style des labels */
+.register-form label {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Alignement des champs de texte */
+.register-form input {
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Focus sur les champs */
+.register-form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Style du bouton de soumission */
+.register-form button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+/* Effet hover pour le bouton */
+.register-form button:hover {
+    background-color: #45a049;
+}
+
+/* Style du message d'erreur */
+.register-form p {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.register-form .error {
+    color: red;
+}
+
+/* Espacement entre les champs */
+.register-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Ajouter un padding dans le formulaire pour un meilleur espacement entre les bords et le contenu */
+.register-form form {
+    padding-bottom: 20px;
+}

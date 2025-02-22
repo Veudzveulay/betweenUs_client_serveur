@@ -1,0 +1,118 @@
+/* Style global du formulaire */
+.task-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Titre du formulaire */
+.task-form h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style des champs du formulaire */
+.task-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task-form label {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px; /* Espacement sous le label */
+}
+
+/* Alignement des champs de texte */
+.task-form input,
+.task-form textarea,
+.task-form select {
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 100%; /* S'assurer que les champs prennent toute la largeur disponible */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Focus sur les champs */
+.task-form input:focus,
+.task-form textarea:focus,
+.task-form select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Style des boutons */
+.task-form button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+/* Effet hover pour le bouton */
+.task-form button:hover {
+    background-color: #45a049;
+}
+
+/* Message d'erreur et succès */
+.task-form p {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.task-form .error {
+    color: red;
+}
+
+.task-form .success {
+    color: green;
+}
+
+/* Espacement entre les champs et labels */
+.task-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Espacement et alignement des champs de type select */
+.task-form select {
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Pour les éléments textarea (description), on peut leur donner un peu plus de hauteur */
+.task-form textarea {
+    height: 120px;
+    resize: vertical;  /* Permet à l'utilisateur de redimensionner */
+}
+
+/* Ajouter un padding dans le formulaire pour un meilleur espacement entre les bords et le contenu */
+.task-form form {
+    padding-bottom: 20px;
+}
