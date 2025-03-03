@@ -3,12 +3,22 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const http = require("http");
+const { Server } = require("socket.io");
 
 // Importation des routes
 const authRoutes = require("./routes/auth");
 const taskRoutes = require("./routes/tasks");
 
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
+
 const PORT = process.env.PORT || 5000;
 
 // Middleware
@@ -32,16 +42,26 @@ db.connect(err => {
     console.log("Connecté à MySQL");
 });
 
-// Route de test
-app.get("/", (req, res) => {
-    res.send("Serveur Node.js opérationnel !");
+io.on("connection", (socket) => {
+    console.log("Nouvelle connexion :", socket.id);
+    
+    socket.on("sendMessage", (data) => {
+        io.emit("receiveMessage", data);
+    });
+
+    socket.on("typing", (username) => {
+        socket.broadcast.emit("typing", username);
+    });
+
+    socket.on("disconnect", () => {
+        console.log("Utilisateur déconnecté :", socket.id);
+    });
 });
 
-// Utilisation des routes importées
-app.use("/api", authRoutes); 
+// Routes API
+app.use("/api", authRoutes);
 app.use("/api", taskRoutes);
 
-// Démarrer le serveur
-app.listen(PORT, () => {
-    console.log(`Serveur démarré sur le port ${PORT}`);
+server.listen(PORT, () => {
+    console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
 });
